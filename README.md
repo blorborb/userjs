@@ -1,0 +1,2 @@
+# userjs
+userjs for firefox
