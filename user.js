@@ -6,19 +6,6 @@ user_pref("browser.policies.runOncePerModification.setDefaultSearchEngine", "Duc
 
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("browser.urlbar.placeholderName.private", "DuckDuckGo");
-user_pref("browser.urlbar.shortcuts.actions", false);
-user_pref("browser.urlbar.shortcuts.bookmarks", false);
-user_pref("browser.urlbar.shortcuts.history", false);
-user_pref("browser.urlbar.shortcuts.tabs", false);
-user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
-user_pref("browser.urlbar.suggest.engines", false);
-user_pref("browser.urlbar.suggest.history", false);
-user_pref("browser.urlbar.suggest.openpage", false);
-user_pref("browser.urlbar.suggest.quickactions", false);
-user_pref("browser.urlbar.suggest.recentsearches", false);
-user_pref("browser.urlbar.suggest.searches", true);
-user_pref("browser.urlbar.suggest.topsites", false);
-user_pref("browser.urlbar.switchTabs.searchAllContainers", false);
 
 user_pref("dom.compression_streams.zstd.enabled", true);
 user_pref("dom.css_pseudo_element.enabled", true);
@@ -34,19 +21,8 @@ user_pref("extensions.webapi.enabled", false);
 user_pref("findbar.highlightAll", true);
 
 user_pref("image.mem.decode_bytes_at_a_time", 65536);
-user_pref("javascript.options.atomics_wait_async", true);
-user_pref("javascript.options.wasm_branch_hinting", true);
-user_pref("javascript.options.wasm_js_promise_integration", true);
-user_pref("javascript.options.wasm_memory_control", true);
-user_pref("javascript.options.wasm_moz_intgemm", true);
-user_pref("layout.accessiblecaret.enabled_on_touch", false);
-user_pref("layout.css.grid-template-masonry-value.enabled", true);
-user_pref("layout.css.moz-appearance.enabled", false);
-user_pref("layout.frame_rate", 165);
 
 user_pref("media.allow-audio-non-utility", true);
-user_pref("media.cache_readahead_limit", 7200);
-user_pref("media.cache_resume_threshold", 3600);
 
 user_pref("media.navigator.mozgetusermedia.enabled", false);
 
@@ -64,6 +40,9 @@ user_pref("privacy.restrict3rdpartystorage.heuristic.window_open", true);
 
 // enforce smartblock shims
 user_pref("extensions.webcompat.enable_shims", true);
+
+// change navigator properties
+user_pref("general.buildID.override", "");
 
 // enable samesite lax
 user_pref("network.cookie.sameSite.laxByDefault", true);
@@ -85,7 +64,10 @@ user_pref("security.csp.reporting.enabled", false);
 user_pref("privacy.query_stripping.enabled", true);
 user_pref("privacy.query_stripping.enabled.pbmode", true);
 
-// disable vulnerable cipher suites
+// disable ssl session identifiers
+user_pref("security.ssl.disable_session_identifiers", true);
+
+// disable vulnerable cipher suites (passive fingerprinting possible?)
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha", false);
 user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha", false);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_sha", false);
@@ -110,10 +92,6 @@ user_pref("webgl.enable-debug-renderer-info", false);
 //// performance ////
 /////////////////////
 /////////////////////
-
-// lower memory usage by reducing amount of entries in back/forward history
-user_pref("browser.sessionhistory.max_entries", 32);
-user_pref("browser.sessionhistory.max_total_viewers", 4);
 
 // enable h265
 user_pref("dom.media.webcodecs.h265.enabled", true);
@@ -147,6 +125,9 @@ user_pref("gfx.webrender.svg-filter-effects.femorphology", true);
 user_pref("gfx.webrender.svg-filter-effects.fespecularlighting", true);
 user_pref("gfx.webrender.svg-filter-effects.fetile", true);
 user_pref("gfx.webrender.svg-filter-effects.feturbulence", true);
+
+// enable css masonry layout
+user_pref("layout.css.grid-template-masonry-value.enabled", true);
 
 // force hardware acceleration
 user_pref("media.hardware-video-decoding.force-enabled", true);
@@ -273,6 +254,20 @@ user_pref("browser.tabs.fadeOutUnloadedTabs", true);
 user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.startup.page", 3);
+
+// disable suggestions
+user_pref("browser.urlbar.shortcuts.actions", false);
+user_pref("browser.urlbar.shortcuts.bookmarks", false);
+user_pref("browser.urlbar.shortcuts.history", false);
+user_pref("browser.urlbar.shortcuts.tabs", false);
+user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
+user_pref("browser.urlbar.suggest.engines", false);
+user_pref("browser.urlbar.suggest.history", false);
+user_pref("browser.urlbar.suggest.openpage", false);
+user_pref("browser.urlbar.suggest.quickactions", false);
+user_pref("browser.urlbar.suggest.recentsearches", false);
+user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.suggest.topsites", false);
 
 // enable autoscroll
 user_pref("general.autoScroll", true);
