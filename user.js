@@ -169,7 +169,7 @@ user_pref("accessibility.typeaheadfind.prefillwithselection", false);
 user_pref("browser.urlbar.accessibility.tabToSearch.announceResults", false);
 user_pref("devtools.accessibility.enabled", false);
 
-// disable safe browsing (could be a security issue)
+// disable safe browsing
 user_pref("browser.safebrowsing.downloads.remote.block_dangerous", false);
 user_pref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
