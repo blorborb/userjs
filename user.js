@@ -1,37 +1,3 @@
-user_pref("browser.policies.applied", true);
-user_pref("browser.policies.runOncePerModification.extensionsInstall", "[\"https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi\"]");
-user_pref("browser.policies.runOncePerModification.extensionsUninstall", "[\"google@search.mozilla.org\",\"bing@search.mozilla.org\",\"amazondotcom@search.mozilla.org\",\"ebay@search.mozilla.org\",\"twitter@search.mozilla.org\"]");
-user_pref("browser.policies.runOncePerModification.removeSearchEngines", "[\"Google\",\"Bing\",\"Amazon.com\",\"eBay\",\"Twitter\"]");
-user_pref("browser.policies.runOncePerModification.setDefaultSearchEngine", "DuckDuckGo");
-
-user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
-user_pref("browser.urlbar.placeholderName.private", "DuckDuckGo");
-
-user_pref("dom.compression_streams.zstd.enabled", true);
-user_pref("dom.css_pseudo_element.enabled", true);
-
-user_pref("extensions.ui.dictionary.hidden", true);
-user_pref("extensions.ui.extension.hidden", false);
-user_pref("extensions.ui.lastCategory", "addons://list/extension");
-user_pref("extensions.ui.locale.hidden", true);
-user_pref("extensions.ui.mlmodel.hidden", true);
-user_pref("extensions.ui.sitepermission.hidden", true);
-user_pref("extensions.webapi.enabled", false);
-
-user_pref("findbar.highlightAll", true);
-
-user_pref("image.mem.decode_bytes_at_a_time", 65536);
-
-user_pref("media.allow-audio-non-utility", true);
-
-user_pref("media.navigator.mozgetusermedia.enabled", false);
-
-user_pref("privacy.antitracking.isolateContentScriptResources", true);
-
-user_pref("privacy.restrict3rdpartystorage.heuristic.recently_visited", true);
-user_pref("privacy.restrict3rdpartystorage.heuristic.redirect", true);
-user_pref("privacy.restrict3rdpartystorage.heuristic.window_open", true);
-
 //////////////////
 //////////////////
 //// security ////
@@ -57,12 +23,20 @@ user_pref("network.preconnect", false);
 user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
 
-// disable csp reporting
-user_pref("security.csp.reporting.enabled", false);
+// isolate content script resources?
+user_pref("privacy.antitracking.isolateContentScriptResources", true);
 
 // enable query stripping
 user_pref("privacy.query_stripping.enabled", true);
 user_pref("privacy.query_stripping.enabled.pbmode", true);
+
+// enable state partitioning for recently visited, redirect and window open
+user_pref("privacy.restrict3rdpartystorage.heuristic.recently_visited", true);
+user_pref("privacy.restrict3rdpartystorage.heuristic.redirect", true);
+user_pref("privacy.restrict3rdpartystorage.heuristic.window_open", true);
+
+// disable csp reporting
+user_pref("security.csp.reporting.enabled", false);
 
 // disable ssl session identifiers
 user_pref("security.ssl.disable_session_identifiers", true);
@@ -92,6 +66,9 @@ user_pref("webgl.enable-debug-renderer-info", false);
 //// performance ////
 /////////////////////
 /////////////////////
+
+// enable zstd for compression streams
+user_pref("dom.compression_streams.zstd.enabled", true);
 
 // enable h265
 user_pref("dom.media.webcodecs.h265.enabled", true);
@@ -125,6 +102,9 @@ user_pref("gfx.webrender.svg-filter-effects.femorphology", true);
 user_pref("gfx.webrender.svg-filter-effects.fespecularlighting", true);
 user_pref("gfx.webrender.svg-filter-effects.fetile", true);
 user_pref("gfx.webrender.svg-filter-effects.feturbulence", true);
+
+// increase chunk size for image decoders
+user_pref("image.mem.decode_bytes_at_a_time", 65536);
 
 // enable css masonry layout
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
@@ -247,6 +227,13 @@ user_pref("ui.key.menuAccessKeyFocuses", false);
 // dont show about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
 
+// disable firefox labs
+user_pref("browser.preferences.experimental.hidden", true);
+user_pref("browser.preferences.experimental", false);
+
+// disable more from mozilla
+user_pref("browser.preferences.moreFromMozilla", true);
+
 // fades out unloaded tabs
 user_pref("browser.tabs.fadeOutUnloadedTabs", true);
 
@@ -254,6 +241,9 @@ user_pref("browser.tabs.fadeOutUnloadedTabs", true);
 user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("browser.startup.page", 3);
+
+// only show bookmarks on a new tab
+user_pref("browser.toolbars.bookmarks.visibility", "newtab");
 
 // disable suggestions
 user_pref("browser.urlbar.shortcuts.actions", false);
@@ -269,18 +259,11 @@ user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.suggest.topsites", false);
 
+// enable highlighting all in findbar
+user_pref("findbar.highlightAll", true);
+
 // enable autoscroll
 user_pref("general.autoScroll", true);
-
-// only show bookmarks on a new tab
-user_pref("browser.toolbars.bookmarks.visibility", "newtab");
-
-// disable firefox labs
-user_pref("browser.preferences.experimental.hidden", true);
-user_pref("browser.preferences.experimental", false);
-
-// disable more from mozilla
-user_pref("browser.preferences.moreFromMozilla", true);
 
 // disable scrollbars
 user_pref("layout.testing.scrollbars.always-hidden", true);
