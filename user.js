@@ -23,7 +23,7 @@ user_pref("network.preconnect", false);
 user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
 
-// isolate content script resources?
+// isolate content script resources
 user_pref("privacy.antitracking.isolateContentScriptResources", true);
 
 // enable query stripping
@@ -74,11 +74,13 @@ user_pref("dom.compression_streams.zstd.enabled", true);
 user_pref("dom.media.webcodecs.h265.enabled", true);
 
 // increase canvas cache size
-user_pref("gfx.canvas.accelerated.cache-items", 8192);
 user_pref("gfx.canvas.accelerated.cache-size", 512);
 
 // increase skia cache size
 user_pref("gfx.content.skia-font-cache-size", 20);
+
+// force reusing decoder device
+user_pref("gfx.direct3d11.reuse-decoder-device-force-enabled", true);
 
 // enable skia dithering
 user_pref("gfx.skia.dithering", true);
@@ -150,27 +152,38 @@ user_pref("browser.urlbar.accessibility.tabToSearch.announceResults", false);
 user_pref("devtools.accessibility.enabled", false);
 
 // disable safe browsing
+user_pref("browser.safebrowsing.allowOverride", false);
+user_pref("browser.safebrowsing.blockedURIs.enabled", false);
+user_pref("browser.safebrowsing.downloads.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.block_dangerous", false);
 user_pref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.url", "");
+user_pref("browser.safebrowsing.id", "");
+user_pref("browser.safebrowsing.malware.enabled", false);
+user_pref("browser.safebrowsing.only_top_level", false);
+user_pref("browser.safebrowsing.phishing.enabled", false);
 user_pref("browser.safebrowsing.provider.google.advisoryName", "");
 user_pref("browser.safebrowsing.provider.google.advisoryURL", "");
+user_pref("browser.safebrowsing.provider.google.gethashURL", "");
 user_pref("browser.safebrowsing.provider.google.lists", "");
 user_pref("browser.safebrowsing.provider.google.pver", "");
 user_pref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google.reportURL", "");
+user_pref("browser.safebrowsing.provider.google.updateURL", "");
 user_pref("browser.safebrowsing.provider.google4.advisoryName", "");
 user_pref("browser.safebrowsing.provider.google4.advisoryURL", "");
 user_pref("browser.safebrowsing.provider.google4.dataSharingURL", "");
+user_pref("browser.safebrowsing.provider.google4.gethashURL", "");
 user_pref("browser.safebrowsing.provider.google4.lists", "");
 user_pref("browser.safebrowsing.provider.google4.pver", "");
 user_pref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "");
 user_pref("browser.safebrowsing.provider.google4.reportURL", "");
+user_pref("browser.safebrowsing.provider.google4.updateURL", "");
 user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
 user_pref("browser.safebrowsing.provider.mozilla.lists", "");
 user_pref("browser.safebrowsing.provider.mozilla.lists.base", "");
@@ -189,6 +202,7 @@ user_pref("identity.fxaccounts.auth.uri", "");
 user_pref("identity.fxaccounts.commands.missed.fetch_interval", 0);
 user_pref("identity.fxaccounts.commands.remoteTabManagement.enabled", false);
 user_pref("identity.fxaccounts.contextParam", "");
+user_pref("identity.fxaccounts.enabled", false);
 user_pref("identity.fxaccounts.oauth.enabled", false);
 user_pref("identity.fxaccounts.pairing.enabled", false);
 user_pref("identity.fxaccounts.remote.oauth.uri", "");
@@ -198,6 +212,7 @@ user_pref("identity.fxaccounts.remote.root", "");
 user_pref("identity.fxaccounts.telemetry.clientAssociationPing.enabled", false);
 user_pref("identity.fxaccounts.toolbar.defaultVisible", false);
 user_pref("identity.fxaccounts.toolbar.enabled", false);
+user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.monitorEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.relayEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.vpnEnabled", false);
@@ -239,7 +254,11 @@ user_pref("browser.tabs.fadeOutUnloadedTabs", true);
 
 // disable home page
 user_pref("browser.newtabpage.enabled", false);
+
+// set home and new tab page to about:blank
 user_pref("browser.startup.homepage", "about:blank");
+
+// resume previous session
 user_pref("browser.startup.page", 3);
 
 // only show bookmarks on a new tab
@@ -271,11 +290,29 @@ user_pref("layout.testing.scrollbars.always-hidden", true);
 // autoplay videos
 user_pref("media.autoplay.default", 0);
 
-////////////////////////////
-////////////////////////////
-//// annoyances/useless ////
-////////////////////////////
-////////////////////////////
+// enable drm content
+user_pref("media.eme.enabled", true);
+
+////////////////////
+////////////////////
+//// annoyances ////
+////////////////////
+////////////////////
+
+// make firefox show the close tab button with more tabs opened
+user_pref("browser.tabs.tabClipWidth", 64);
+user_pref("browser.tabs.tabMinWidth", 32);
+
+// disable fullscreen warning
+user_pref("full-screen-api.transition.timeout", 0);
+user_pref("full-screen-api.warning.delay", 0);
+user_pref("full-screen-api.warning.timeout", 0);
+
+/////////////////
+/////////////////
+//// useless ////
+/////////////////
+/////////////////
 
 // ai
 user_pref("browser.ml.chat.menu", false);
@@ -297,19 +334,17 @@ user_pref("browser.ml.modelCacheTimeout", 0);
 user_pref("browser.ml.modelHubRootUrl", "");
 user_pref("browser.ml.modelHubUrlTemplate", "");
 user_pref("browser.tabs.groups.smart.searchTopicEnabled", false);
+user_pref("browser.tabs.groups.smart.userEnabled", false);
 user_pref("extensions.ml.enabled", false);
 
-// force tabs in titlebar
-user_pref("browser.tabs.inTitlebar", 1);
+/////////////////////////////////
+/////////////////////////////////
+//// firefox recommendations ////
+/////////////////////////////////
+/////////////////////////////////
 
-// make firefox show the close tab button with more tabs opened
-user_pref("browser.tabs.tabClipWidth", 64);
-user_pref("browser.tabs.tabMinWidth", 32);
-
-// disable fullscreen warning
-user_pref("full-screen-api.transition.timeout", 0);
-user_pref("full-screen-api.warning.delay", 0);
-user_pref("full-screen-api.warning.timeout", 0);
+// disable recommendation pane in about:addons (uses Google Analytics)
+user_pref("extensions.getAddons.showPane", false)
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -325,3 +360,41 @@ user_pref("dom.webshare.enabled", true);
 
 // enable vibrator
 user_pref("dom.vibrator.enabled", true);
+
+
+///////////////////////////////////
+///////////////////////////////////
+//// testing/not in a category ////
+///////////////////////////////////
+///////////////////////////////////
+
+user_pref("browser.region.network.url", "");
+
+// telemetry
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.dap.helper.hpke", "");
+user_pref("toolkit.telemetry.dap.helper.url", "");
+user_pref("toolkit.telemetry.dap.leader.hpke", "");
+user_pref("toolkit.telemetry.dap.leader.url", "");
+user_pref("toolkit.telemetry.dap.logLevel", "");
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.previousBuildID", "");
+user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
+user_pref("toolkit.telemetry.server", "");
+user_pref("toolkit.telemetry.server_owner", "");
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+user_pref("toolkit.telemetry.translations.logLevel", "");
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
+
+// pocket
+user_pref("extensions.pocket.api", "");
+user_pref("extensions.pocket.bffApi", "");
+user_pref("extensions.pocket.bffRecentSaves", false);
+user_pref("extensions.pocket.oAuthConsumerKey", "");
+user_pref("extensions.pocket.oAuthConsumerKeyBff", "");
+user_pref("extensions.pocket.showHome", false);
+user_pref("extensions.pocket.site", "");
