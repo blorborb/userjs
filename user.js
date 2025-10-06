@@ -8,7 +8,7 @@
 user_pref("extensions.webcompat.enable_shims", true);
 
 // change navigator properties
-user_pref("general.buildID.override", "");
+//user_pref("general.buildID.override", "");
 
 // enable samesite lax
 user_pref("network.cookie.sameSite.laxByDefault", true);
@@ -58,16 +58,13 @@ user_pref("image.http.accept", "image/avif,image/webp,image/apng,image/*,*/*;q=0
 // disable webgl (enable if you need)
 user_pref("webgl.disabled", true);
 
-// disable debug renderer info if you want to enable webgl
-user_pref("webgl.enable-debug-renderer-info", false);
-
 /////////////////////
 /////////////////////
 //// performance ////
 /////////////////////
 /////////////////////
 
-// enable zstd for compression streams
+// enable zstd compression for streams of data
 user_pref("dom.compression_streams.zstd.enabled", true);
 
 // enable h265
@@ -79,17 +76,20 @@ user_pref("gfx.canvas.accelerated.cache-size", 512);
 // increase skia cache size
 user_pref("gfx.content.skia-font-cache-size", 20);
 
-// force reusing decoder device
+// force reusing of decoder device
 user_pref("gfx.direct3d11.reuse-decoder-device-force-enabled", true);
 
 // enable skia dithering
 user_pref("gfx.skia.dithering", true);
 
-// enable webrender
+//// enable webrender ////
 user_pref("gfx.webrender.all", true);
+
+// forcing webrender compositor crashes in full-screen videos on firefox 143
 user_pref("gfx.webrender.compositor", true);
+
+// enable webrender dithering for gradients
 user_pref("gfx.webrender.dithering", true);
-user_pref("gfx.webrender.layer-compositor", true);
 
 // enable precaching
 user_pref("gfx.webrender.precache-shaders", true);
@@ -197,6 +197,15 @@ user_pref("browser.translations.automaticallyPopup", false);
 user_pref("browser.translations.enable", false);
 user_pref("browser.translations.select.enable", false);
 
+// pocket (probably going to be removed soon)
+user_pref("extensions.pocket.api", "");
+user_pref("extensions.pocket.bffApi", "");
+user_pref("extensions.pocket.bffRecentSaves", false);
+user_pref("extensions.pocket.oAuthConsumerKey", "");
+user_pref("extensions.pocket.oAuthConsumerKeyBff", "");
+user_pref("extensions.pocket.showHome", false);
+user_pref("extensions.pocket.site", "");
+
 // disable mozilla accounts
 user_pref("identity.fxaccounts.auth.uri", "");
 user_pref("identity.fxaccounts.commands.missed.fetch_interval", 0);
@@ -233,11 +242,11 @@ user_pref("sidebar.visibility", "hide-sidebar");
 // disable key for menu bar
 user_pref("ui.key.menuAccessKeyFocuses", false);
 
-/////////////////////
-/////////////////////
-//// preferences ////
-/////////////////////
-/////////////////////
+//////////////////////////////
+//////////////////////////////
+//// personal preferences ////
+//////////////////////////////
+//////////////////////////////
 
 // dont show about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
@@ -292,6 +301,26 @@ user_pref("media.autoplay.default", 0);
 
 // enable drm content
 user_pref("media.eme.enabled", true);
+
+// telemetry
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.dap.helper.hpke", "");
+user_pref("toolkit.telemetry.dap.helper.url", "");
+user_pref("toolkit.telemetry.dap.leader.hpke", "");
+user_pref("toolkit.telemetry.dap.leader.url", "");
+user_pref("toolkit.telemetry.dap.logLevel", "");
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.previousBuildID", "");
+user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
+user_pref("toolkit.telemetry.server", "");
+user_pref("toolkit.telemetry.server_owner", "");
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+user_pref("toolkit.telemetry.translations.logLevel", "");
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
 
 ////////////////////
 ////////////////////
@@ -352,49 +381,17 @@ user_pref("extensions.getAddons.showPane", false)
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
+// enable vibrator
+user_pref("dom.vibrator.enabled", true);
+
 // enable view transitions
 user_pref("dom.viewTransitions.enabled", true);
 
 // enable webshare
 user_pref("dom.webshare.enabled", true);
 
-// enable vibrator
-user_pref("dom.vibrator.enabled", true);
-
-
 ///////////////////////////////////
 ///////////////////////////////////
 //// testing/not in a category ////
 ///////////////////////////////////
 ///////////////////////////////////
-
-user_pref("browser.region.network.url", "");
-
-// telemetry
-user_pref("toolkit.telemetry.archive.enabled", false);
-user_pref("toolkit.telemetry.bhrPing.enabled", false);
-user_pref("toolkit.telemetry.dap.helper.hpke", "");
-user_pref("toolkit.telemetry.dap.helper.url", "");
-user_pref("toolkit.telemetry.dap.leader.hpke", "");
-user_pref("toolkit.telemetry.dap.leader.url", "");
-user_pref("toolkit.telemetry.dap.logLevel", "");
-user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
-user_pref("toolkit.telemetry.newProfilePing.enabled", false);
-user_pref("toolkit.telemetry.previousBuildID", "");
-user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
-user_pref("toolkit.telemetry.server", "");
-user_pref("toolkit.telemetry.server_owner", "");
-user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
-user_pref("toolkit.telemetry.translations.logLevel", "");
-user_pref("toolkit.telemetry.unified", false);
-user_pref("toolkit.telemetry.updatePing.enabled", false);
-user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
-
-// pocket
-user_pref("extensions.pocket.api", "");
-user_pref("extensions.pocket.bffApi", "");
-user_pref("extensions.pocket.bffRecentSaves", false);
-user_pref("extensions.pocket.oAuthConsumerKey", "");
-user_pref("extensions.pocket.oAuthConsumerKeyBff", "");
-user_pref("extensions.pocket.showHome", false);
-user_pref("extensions.pocket.site", "");
