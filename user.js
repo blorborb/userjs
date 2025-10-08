@@ -249,7 +249,7 @@ user_pref("browser.preferences.experimental.hidden", true);
 user_pref("browser.preferences.experimental", false);
 
 // disable more from mozilla
-user_pref("browser.preferences.moreFromMozilla", true);
+user_pref("browser.preferences.moreFromMozilla", false);
 
 // disable translations
 user_pref("browser.translations.automaticallyPopup", false);
