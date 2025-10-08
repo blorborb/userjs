@@ -4,6 +4,42 @@
 //////////////////////////
 //////////////////////////
 
+// assorted telemetry
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.api_url", "");
+user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.usage.uploadEnabled", false);
+user_pref("nimbus.migrations.after-remote-settings-update", 0);
+user_pref("nimbus.migrations.after-store-initialized", 0);
+user_pref("nimbus.migrations.init-started", 0);
+user_pref("nimbus.profilesdatastoreservice.enabled", false);
+user_pref("nimbus.telemetry.targetingContextEnabled", false);
+user_pref("nimbus.validation.enabled", false);
+user_pref("telemetry.fog.init_on_shutdown", false);
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.dap.helper.hpke", "");
+user_pref("toolkit.telemetry.dap.helper.url", "");
+user_pref("toolkit.telemetry.dap.leader.hpke", "");
+user_pref("toolkit.telemetry.dap.leader.url", "");
+user_pref("toolkit.telemetry.dap.logLevel", "");
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.previousBuildID", "");
+user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
+user_pref("toolkit.telemetry.server", "");
+user_pref("toolkit.telemetry.server_owner", "");
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+user_pref("toolkit.telemetry.translations.logLevel", "");
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
+
 // disable safe browsing
 user_pref("browser.safebrowsing.allowOverride", false);
 user_pref("browser.safebrowsing.blockedURIs.enabled", false);
@@ -109,41 +145,8 @@ user_pref("network.trr.custom_uri", "https://dns11.quad9.net/dns-query");
 user_pref("network.trr.mode", 3);
 user_pref("network.trr.uri", "https://dns11.quad9.net/dns-query");
 
-// assorted telemetry
-user_pref("app.normandy.enabled", false);
-user_pref("app.normandy.api_url", "");
-user_pref("app.shield.optoutstudies.enabled", false);
-user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
-user_pref("browser.newtabpage.activity-stream.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
-user_pref("datareporting.healthreport.uploadEnabled", false);
-user_pref("datareporting.usage.uploadEnabled", false);
-user_pref("nimbus.migrations.after-remote-settings-update", 0);
-user_pref("nimbus.migrations.after-store-initialized", 0);
-user_pref("nimbus.migrations.init-started", 0);
-user_pref("nimbus.profilesdatastoreservice.enabled", false);
-user_pref("nimbus.telemetry.targetingContextEnabled", false);
-user_pref("nimbus.validation.enabled", false);
-user_pref("telemetry.fog.init_on_shutdown", false);
-user_pref("toolkit.telemetry.archive.enabled", false);
-user_pref("toolkit.telemetry.bhrPing.enabled", false);
-user_pref("toolkit.telemetry.dap.helper.hpke", "");
-user_pref("toolkit.telemetry.dap.helper.url", "");
-user_pref("toolkit.telemetry.dap.leader.hpke", "");
-user_pref("toolkit.telemetry.dap.leader.url", "");
-user_pref("toolkit.telemetry.dap.logLevel", "");
-user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
-user_pref("toolkit.telemetry.newProfilePing.enabled", false);
-user_pref("toolkit.telemetry.previousBuildID", "");
-user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
-user_pref("toolkit.telemetry.server", "");
-user_pref("toolkit.telemetry.server_owner", "");
-user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
-user_pref("toolkit.telemetry.translations.logLevel", "");
-user_pref("toolkit.telemetry.unified", false);
-user_pref("toolkit.telemetry.updatePing.enabled", false);
-user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
+// enable global privacy control
+user_pref("privacy.globalprivacycontrol.enabled", true);
 
 // disable webgl (enable if you need)
 user_pref("webgl.disabled", true);
@@ -280,8 +283,10 @@ user_pref("signon.storeWhenAutocompleteOff", false);
 user_pref("signon.userInputRequiredToCapture.enabled", false);
 user_pref("signon.usernameOnlyForm.enabled", false);
 
-// disable recommendation pane in about:addons (uses Google Analytics)
+// disable recommendations
 user_pref("browser.discovery.enabled", false);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("extensions.getAddons.showPane", false)
 
 // pocket (probably going to be removed soon?)
@@ -337,6 +342,12 @@ user_pref("browser.compactmode.show", true);
 user_pref("browser.tabs.fadeOutUnloadedTabs", true);
 
 // disable home page
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.enabled", false);
 
 // set home and new tab page to about:blank
@@ -361,6 +372,7 @@ user_pref("browser.urlbar.suggest.quickactions", false);
 user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.suggest.topsites", false);
+user_pref("browser.urlbar.suggest.trending", false);
 
 // enable highlighting all in findbar
 user_pref("findbar.highlightAll", true);
