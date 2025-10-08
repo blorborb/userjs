@@ -1,14 +1,67 @@
-//////////////////
-//////////////////
-//// security ////
-//////////////////
-//////////////////
+//////////////////////////
+//////////////////////////
+//// security/privacy ////
+//////////////////////////
+//////////////////////////
+
+// disable safe browsing
+user_pref("browser.safebrowsing.allowOverride", false);
+user_pref("browser.safebrowsing.blockedURIs.enabled", false);
+user_pref("browser.safebrowsing.downloads.enabled", false);
+user_pref("browser.safebrowsing.downloads.remote.block_dangerous", false);
+user_pref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
+user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
+user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+user_pref("browser.safebrowsing.downloads.remote.enabled", false);
+user_pref("browser.safebrowsing.downloads.remote.url", "");
+user_pref("browser.safebrowsing.id", "");
+user_pref("browser.safebrowsing.malware.enabled", false);
+user_pref("browser.safebrowsing.only_top_level", false);
+user_pref("browser.safebrowsing.phishing.enabled", false);
+user_pref("browser.safebrowsing.provider.google.advisoryName", "");
+user_pref("browser.safebrowsing.provider.google.advisoryURL", "");
+user_pref("browser.safebrowsing.provider.google.gethashURL", "");
+user_pref("browser.safebrowsing.provider.google.lists", "");
+user_pref("browser.safebrowsing.provider.google.pver", "");
+user_pref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google.reportURL", "");
+user_pref("browser.safebrowsing.provider.google.updateURL", "");
+user_pref("browser.safebrowsing.provider.google4.advisoryName", "");
+user_pref("browser.safebrowsing.provider.google4.advisoryURL", "");
+user_pref("browser.safebrowsing.provider.google4.dataSharingURL", "");
+user_pref("browser.safebrowsing.provider.google4.gethashURL", "");
+user_pref("browser.safebrowsing.provider.google4.lists", "");
+user_pref("browser.safebrowsing.provider.google4.pver", "");
+user_pref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "");
+user_pref("browser.safebrowsing.provider.google4.reportURL", "");
+user_pref("browser.safebrowsing.provider.google4.updateURL", "");
+user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
+user_pref("browser.safebrowsing.provider.mozilla.lists", "");
+user_pref("browser.safebrowsing.provider.mozilla.lists.base", "");
+user_pref("browser.safebrowsing.provider.mozilla.lists.content", "");
+user_pref("browser.safebrowsing.provider.mozilla.pver", "");
+user_pref("browser.safebrowsing.provider.mozilla.updateURL", "");
+user_pref("browser.safebrowsing.reportPhishURL", "");
+
+// disable serp telemetry
+user_pref("browser.search.serpEventTelemetryCategorization.enabled", false);
+user_pref("browser.search.serpEventTelemetryCategorization.regionEnabled", false);
+
+// force https
+user_pref("dom.security.https_only_mode", true);
+user_pref("dom.security.https_only_mode_ever_enabled", true);
 
 // enforce smartblock shims
 user_pref("extensions.webcompat.enable_shims", true);
 
 // change navigator properties
 //user_pref("general.buildID.override", "");
+
+// change accept headers to chromes accept headers
+user_pref("image.http.accept", "image/avif,image/webp,image/apng,image/*,*/*;q=0.8");
+user_pref("network.http.accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
 
 // enable samesite lax
 user_pref("network.cookie.sameSite.laxByDefault", true);
@@ -51,9 +104,46 @@ user_pref("security.ssl3.rsa_aes_128_sha", false);
 user_pref("security.ssl3.rsa_aes_256_gcm_sha384", false);
 user_pref("security.ssl3.rsa_aes_256_sha", false);
 
-// change accept headers to chromes accept headers
-user_pref("network.http.accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
-user_pref("image.http.accept", "image/avif,image/webp,image/apng,image/*,*/*;q=0.8");
+// use quad9 for dns over https
+user_pref("network.trr.custom_uri", "https://dns11.quad9.net/dns-query");
+user_pref("network.trr.mode", 3);
+user_pref("network.trr.uri", "https://dns11.quad9.net/dns-query");
+
+// assorted telemetry
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.api_url", "");
+user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.usage.uploadEnabled", false);
+user_pref("nimbus.migrations.after-remote-settings-update", 0);
+user_pref("nimbus.migrations.after-store-initialized", 0);
+user_pref("nimbus.migrations.init-started", 0);
+user_pref("nimbus.profilesdatastoreservice.enabled", false);
+user_pref("nimbus.telemetry.targetingContextEnabled", false);
+user_pref("nimbus.validation.enabled", false);
+user_pref("telemetry.fog.init_on_shutdown", false);
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.dap.helper.hpke", "");
+user_pref("toolkit.telemetry.dap.helper.url", "");
+user_pref("toolkit.telemetry.dap.leader.hpke", "");
+user_pref("toolkit.telemetry.dap.leader.url", "");
+user_pref("toolkit.telemetry.dap.logLevel", "");
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.previousBuildID", "");
+user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
+user_pref("toolkit.telemetry.server", "");
+user_pref("toolkit.telemetry.server_owner", "");
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+user_pref("toolkit.telemetry.translations.logLevel", "");
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
 
 // disable webgl (enable if you need)
 user_pref("webgl.disabled", true);
@@ -82,7 +172,7 @@ user_pref("gfx.direct3d11.reuse-decoder-device-force-enabled", true);
 // enable skia dithering
 user_pref("gfx.skia.dithering", true);
 
-//// enable webrender ////
+// enable webrender
 user_pref("gfx.webrender.all", true);
 
 // forcing webrender compositor crashes in full-screen videos on firefox 143
@@ -133,11 +223,11 @@ user_pref("network.ssl_tokens_cache_capacity", 10240);
 // enable certificate compression
 user_pref("security.tls.enable_certificate_compression_abridged", true);
 
-///////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
-//// unneeded for me (remove any of these if you need to use them) ////
-///////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
+//////////////////
+//////////////////
+//// Built in ////
+//////////////////
+//////////////////
 
 // disable accessibility (could increase performance?)
 user_pref("accessibility.ARIAElementReflection.enabled", false);
@@ -151,53 +241,50 @@ user_pref("accessibility.typeaheadfind.prefillwithselection", false);
 user_pref("browser.urlbar.accessibility.tabToSearch.announceResults", false);
 user_pref("devtools.accessibility.enabled", false);
 
-// disable safe browsing
-user_pref("browser.safebrowsing.allowOverride", false);
-user_pref("browser.safebrowsing.blockedURIs.enabled", false);
-user_pref("browser.safebrowsing.downloads.enabled", false);
-user_pref("browser.safebrowsing.downloads.remote.block_dangerous", false);
-user_pref("browser.safebrowsing.downloads.remote.block_dangerous_host", false);
-user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
-user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
-user_pref("browser.safebrowsing.downloads.remote.enabled", false);
-user_pref("browser.safebrowsing.downloads.remote.url", "");
-user_pref("browser.safebrowsing.id", "");
-user_pref("browser.safebrowsing.malware.enabled", false);
-user_pref("browser.safebrowsing.only_top_level", false);
-user_pref("browser.safebrowsing.phishing.enabled", false);
-user_pref("browser.safebrowsing.provider.google.advisoryName", "");
-user_pref("browser.safebrowsing.provider.google.advisoryURL", "");
-user_pref("browser.safebrowsing.provider.google.gethashURL", "");
-user_pref("browser.safebrowsing.provider.google.lists", "");
-user_pref("browser.safebrowsing.provider.google.pver", "");
-user_pref("browser.safebrowsing.provider.google.reportMalwareMistakeURL", "");
-user_pref("browser.safebrowsing.provider.google.reportPhishMistakeURL", "");
-user_pref("browser.safebrowsing.provider.google.reportURL", "");
-user_pref("browser.safebrowsing.provider.google.updateURL", "");
-user_pref("browser.safebrowsing.provider.google4.advisoryName", "");
-user_pref("browser.safebrowsing.provider.google4.advisoryURL", "");
-user_pref("browser.safebrowsing.provider.google4.dataSharingURL", "");
-user_pref("browser.safebrowsing.provider.google4.gethashURL", "");
-user_pref("browser.safebrowsing.provider.google4.lists", "");
-user_pref("browser.safebrowsing.provider.google4.pver", "");
-user_pref("browser.safebrowsing.provider.google4.reportMalwareMistakeURL", "");
-user_pref("browser.safebrowsing.provider.google4.reportPhishMistakeURL", "");
-user_pref("browser.safebrowsing.provider.google4.reportURL", "");
-user_pref("browser.safebrowsing.provider.google4.updateURL", "");
-user_pref("browser.safebrowsing.provider.mozilla.gethashURL", "");
-user_pref("browser.safebrowsing.provider.mozilla.lists", "");
-user_pref("browser.safebrowsing.provider.mozilla.lists.base", "");
-user_pref("browser.safebrowsing.provider.mozilla.lists.content", "");
-user_pref("browser.safebrowsing.provider.mozilla.pver", "");
-user_pref("browser.safebrowsing.provider.mozilla.updateURL", "");
-user_pref("browser.safebrowsing.reportPhishURL", "");
+// do not show about:config warning
+user_pref("browser.aboutConfig.showWarning", false);
+
+// disable firefox labs
+user_pref("browser.preferences.experimental.hidden", true);
+user_pref("browser.preferences.experimental", false);
+
+// disable more from mozilla
+user_pref("browser.preferences.moreFromMozilla", true);
 
 // disable translations
 user_pref("browser.translations.automaticallyPopup", false);
 user_pref("browser.translations.enable", false);
 user_pref("browser.translations.select.enable", false);
 
-// pocket (probably going to be removed soon)
+// disable lockwise
+user_pref("browser.contentblocking.report.lockwise.enabled", false);
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
+user_pref("signon.autofillForms", false);
+user_pref("signon.formlessCapture.enabled", false);
+user_pref("signon.rememberSignons", false);
+user_pref("signon.formRemovalCapture.enabled", false);
+user_pref("signon.generation.available", false);
+user_pref("signon.generation.enabled", false);
+user_pref("signon.improvedPasswordRules.enabled", false);
+user_pref("signon.includeOtherSubdomainsInLookup", false);
+user_pref("signon.management.page.breach-alerts.enabled", false);
+user_pref("signon.management.page.breachAlertUrl", "");
+user_pref("signon.management.page.vulnerable-passwords.enabled", false);
+user_pref("signon.passwordEditCapture.enabled", false);
+user_pref("signon.privateBrowsingCapture.enabled", false);
+user_pref("signon.recipes.remoteRecipes.enabled", false);
+user_pref("signon.schemeUpgrades", false);
+user_pref("signon.showAutoCompleteFooter", false);
+user_pref("signon.storeWhenAutocompleteOff", false);
+user_pref("signon.userInputRequiredToCapture.enabled", false);
+user_pref("signon.usernameOnlyForm.enabled", false);
+
+// disable recommendation pane in about:addons (uses Google Analytics)
+user_pref("browser.discovery.enabled", false);
+user_pref("extensions.getAddons.showPane", false)
+
+// pocket (probably going to be removed soon?)
 user_pref("extensions.pocket.api", "");
 user_pref("extensions.pocket.bffApi", "");
 user_pref("extensions.pocket.bffRecentSaves", false);
@@ -207,6 +294,7 @@ user_pref("extensions.pocket.showHome", false);
 user_pref("extensions.pocket.site", "");
 
 // disable mozilla accounts
+user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
 user_pref("identity.fxaccounts.auth.uri", "");
 user_pref("identity.fxaccounts.commands.missed.fetch_interval", 0);
 user_pref("identity.fxaccounts.commands.remoteTabManagement.enabled", false);
@@ -236,27 +324,14 @@ user_pref("middlemouse.paste", false);
 // disable reader
 user_pref("reader.parse-on-load.enabled", false);
 
-// hide sidebar
-user_pref("sidebar.visibility", "hide-sidebar");
-
-// disable key for menu bar
-user_pref("ui.key.menuAccessKeyFocuses", false);
-
 //////////////////////////////
 //////////////////////////////
 //// personal preferences ////
 //////////////////////////////
 //////////////////////////////
 
-// dont show about:config warning
-user_pref("browser.aboutConfig.showWarning", false);
-
-// disable firefox labs
-user_pref("browser.preferences.experimental.hidden", true);
-user_pref("browser.preferences.experimental", false);
-
-// disable more from mozilla
-user_pref("browser.preferences.moreFromMozilla", true);
+// show compact mode
+user_pref("browser.compactmode.show", true);
 
 // fades out unloaded tabs
 user_pref("browser.tabs.fadeOutUnloadedTabs", true);
@@ -302,25 +377,13 @@ user_pref("media.autoplay.default", 0);
 // enable drm content
 user_pref("media.eme.enabled", true);
 
-// telemetry
-user_pref("toolkit.telemetry.archive.enabled", false);
-user_pref("toolkit.telemetry.bhrPing.enabled", false);
-user_pref("toolkit.telemetry.dap.helper.hpke", "");
-user_pref("toolkit.telemetry.dap.helper.url", "");
-user_pref("toolkit.telemetry.dap.leader.hpke", "");
-user_pref("toolkit.telemetry.dap.leader.url", "");
-user_pref("toolkit.telemetry.dap.logLevel", "");
-user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
-user_pref("toolkit.telemetry.newProfilePing.enabled", false);
-user_pref("toolkit.telemetry.previousBuildID", "");
-user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
-user_pref("toolkit.telemetry.server", "");
-user_pref("toolkit.telemetry.server_owner", "");
-user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
-user_pref("toolkit.telemetry.translations.logLevel", "");
-user_pref("toolkit.telemetry.unified", false);
-user_pref("toolkit.telemetry.updatePing.enabled", false);
-user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
+// hide sidebar
+user_pref("sidebar.position_start", false);
+user_pref("sidebar.animation.enabled", false);
+user_pref("sidebar.nimbus", "");
+
+// disable key for menu bar
+user_pref("ui.key.menuAccessKeyFocuses", false);
 
 ////////////////////
 ////////////////////
@@ -328,7 +391,7 @@ user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
 ////////////////////
 ////////////////////
 
-// make firefox show the close tab button with more tabs opened
+// make firefox show the close tab button with much more tabs opened
 user_pref("browser.tabs.tabClipWidth", 64);
 user_pref("browser.tabs.tabMinWidth", 32);
 
@@ -336,6 +399,13 @@ user_pref("browser.tabs.tabMinWidth", 32);
 user_pref("full-screen-api.transition.timeout", 0);
 user_pref("full-screen-api.warning.delay", 0);
 user_pref("full-screen-api.warning.timeout", 0);
+
+// disable promo in about:* pages
+user_pref("browser.contentblocking.report.hide_vpn_banner", true);
+user_pref("browser.contentblocking.report.show_mobile_app", false);
+user_pref("browser.contentblocking.report.vpn.enabled", false);
+user_pref("browser.vpn_promo.enabled", false);
+user_pref("browser.promo.focus.enabled", false);
 
 /////////////////
 /////////////////
@@ -366,20 +436,11 @@ user_pref("browser.tabs.groups.smart.searchTopicEnabled", false);
 user_pref("browser.tabs.groups.smart.userEnabled", false);
 user_pref("extensions.ml.enabled", false);
 
-/////////////////////////////////
-/////////////////////////////////
-//// firefox recommendations ////
-/////////////////////////////////
-/////////////////////////////////
-
-// disable recommendation pane in about:addons (uses Google Analytics)
-user_pref("extensions.getAddons.showPane", false)
-
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
-//// features that are on chrome thats not enabled by default ////
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//// features that are on other browsers that is not enabled by default ////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 // enable vibrator
 user_pref("dom.vibrator.enabled", true);
