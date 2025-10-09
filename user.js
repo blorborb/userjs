@@ -14,6 +14,7 @@ user_pref("browser.newtabpage.activity-stream.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.usage.uploadEnabled", false);
+user_pref("extensions.dataCollectionPermissions.enabled", false);
 user_pref("nimbus.migrations.after-remote-settings-update", 0);
 user_pref("nimbus.migrations.after-store-initialized", 0);
 user_pref("nimbus.migrations.init-started", 0);
@@ -288,6 +289,8 @@ user_pref("browser.discovery.enabled", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("extensions.getAddons.showPane", false)
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
+user_pref("extensions.recommendations.themeRecommendationUrl", "");
 
 // pocket (probably going to be removed soon?)
 user_pref("extensions.pocket.api", "");
