@@ -315,7 +315,7 @@ user_pref("signon.storeWhenAutocompleteOff", false);
 user_pref("signon.userInputRequiredToCapture.enabled", false);
 user_pref("signon.usernameOnlyForm.enabled", false);
 
-// disable recommendations
+// disable recommendations (some probably needs to be put in manually)
 user_pref("browser.discovery.enabled", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
