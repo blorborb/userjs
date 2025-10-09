@@ -5,14 +5,19 @@
 //////////////////////////
 
 // assorted telemetry
-user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.first_run", false);
+user_pref("app.normandy.logging.level", 0);
+user_pref("app.normandy.shieldLearnMoreUrl", "");
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
+user_pref("datareporting.healthreport.infoURL", "");
 user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.usage.uploadEnabled", false);
 user_pref("extensions.dataCollectionPermissions.enabled", false);
 user_pref("nimbus.migrations.after-remote-settings-update", 0);
@@ -41,7 +46,16 @@ user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
 user_pref("toolkit.telemetry.user_characteristics_ping.logLevel", "");
 
-// disable safe browsing
+// disable crash reporting
+user_pref("breakpad.reportURL", "");
+user_pref("browser.crashReporter.memtest", false);
+user_pref("browser.crashReports.unsubmittedCheck.chancesUntilSuppress", 0);
+user_pref("browser.tabs.crashReporting.sendReport", false);
+
+// enable force media memory cache
+user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
+
+// disable safebrowsing
 user_pref("browser.safebrowsing.allowOverride", false);
 user_pref("browser.safebrowsing.blockedURIs.enabled", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
@@ -88,7 +102,6 @@ user_pref("browser.search.serpEventTelemetryCategorization.regionEnabled", false
 
 // force https
 user_pref("dom.security.https_only_mode", true);
-user_pref("dom.security.https_only_mode_ever_enabled", true);
 
 // enforce smartblock shims
 user_pref("extensions.webcompat.enable_shims", true);
@@ -112,6 +125,9 @@ user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("network.preconnect", false);
 user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
+
+// disable javascript in pdfs
+user_pref("pdfjs.enableScripting", false);
 
 // isolate content script resources
 user_pref("privacy.antitracking.isolateContentScriptResources", true);
@@ -248,12 +264,18 @@ user_pref("devtools.accessibility.enabled", false);
 // do not show about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
 
+// disable welcome page
+user_pref("browser.aboutwelcome.enabled", false);
+
 // disable firefox labs
 user_pref("browser.preferences.experimental.hidden", true);
 user_pref("browser.preferences.experimental", false);
 
 // disable more from mozilla
 user_pref("browser.preferences.moreFromMozilla", false);
+
+// disable check for default browser
+user_pref("browser.shell.checkDefaultBrowser", false);
 
 // disable translations
 user_pref("browser.translations.automaticallyPopup", false);
@@ -376,6 +398,9 @@ user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.suggest.topsites", false);
 user_pref("browser.urlbar.suggest.trending", false);
+
+// show https in the urlbar
+user_pref("browser.urlbar.trimURLs", false);
 
 // enable highlighting all in findbar
 user_pref("findbar.highlightAll", true);
