@@ -316,7 +316,7 @@ user_pref("signon.userInputRequiredToCapture.enabled", false);
 user_pref("signon.usernameOnlyForm.enabled", false);
 
 // disable recommendations
-// extensions.getAddons.showPane and extensions.getAddons.showPane probably need to be put in manually
+// extensions.htmlaboutaddons.recommendations.enabled and extensions.getAddons.showPane probably need to be put in manually
 user_pref("browser.discovery.enabled", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
