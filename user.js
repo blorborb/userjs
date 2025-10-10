@@ -562,21 +562,39 @@ user_pref("browser.startup.page", 3);
 user_pref("browser.toolbars.bookmarks.visibility", "newtab");
 
 // disable suggestions
+user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.urlbar.merino.endpointURL", "");
 user_pref("browser.urlbar.merino.timeoutMs", 0);
+user_pref("browser.urlbar.quicksuggest.rustEnabled", false);
+user_pref("browser.urlbar.recentsearches.featureGate", false);
+user_pref("browser.urlbar.richSuggestions.featureGate", false);
+user_pref("browser.urlbar.richSuggestions.tail", false);
 user_pref("browser.urlbar.shortcuts.actions", false);
 user_pref("browser.urlbar.shortcuts.bookmarks", false);
 user_pref("browser.urlbar.shortcuts.history", false);
 user_pref("browser.urlbar.shortcuts.tabs", false);
 user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
+user_pref("browser.urlbar.suggest.addons", false);
+user_pref("browser.urlbar.suggest.amp", false);
+user_pref("browser.urlbar.suggest.bookmark", false);
+user_pref("browser.urlbar.suggest.calculator", false);
+user_pref("browser.urlbar.suggest.clipboard", false);
 user_pref("browser.urlbar.suggest.engines", false);
 user_pref("browser.urlbar.suggest.history", false);
+user_pref("browser.urlbar.suggest.importantDates", false);
+user_pref("browser.urlbar.suggest.mdn", false);
 user_pref("browser.urlbar.suggest.openpage", false);
 user_pref("browser.urlbar.suggest.quickactions", false);
+user_pref("browser.urlbar.suggest.realtimeOptIn", false);
 user_pref("browser.urlbar.suggest.recentsearches", false);
+user_pref("browser.urlbar.suggest.remotetab", false);
 user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.suggest.topsites", false);
 user_pref("browser.urlbar.suggest.trending", false);
+user_pref("browser.urlbar.suggest.weather", false);
+user_pref("browser.urlbar.suggest.wikipedia", false);
+user_pref("browser.urlbar.suggest.yelp", false);
+user_pref("browser.urlbar.trending.featureGate", false);
 
 // show https in the urlbar
 user_pref("browser.urlbar.trimURLs", false);
