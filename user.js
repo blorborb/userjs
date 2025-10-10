@@ -474,6 +474,7 @@ user_pref("browser.newtabpage.activity-stream.widgets.focusTimer.enabled", false
 user_pref("browser.newtabpage.activity-stream.widgets.lists.enabled", false);
 user_pref("browser.newtabpage.activity-stream.widgets.lists.maxListItems", 0);
 user_pref("browser.newtabpage.activity-stream.widgets.lists.maxLists", 0);
+user_pref("browser.newtabpage.enabled", false);
 
 // disable relay
 user_pref("browser.newtabpage.activity-stream.discoverystream.ohttp.relayURL", "");
