@@ -271,20 +271,18 @@ user_pref("browser.aboutConfig.showWarning", false);
 // disable welcome page
 user_pref("browser.aboutwelcome.enabled", false);
 
-// disable firefox labs
-user_pref("browser.preferences.experimental.hidden", true);
-user_pref("browser.preferences.experimental", false);
-
-// disable more from mozilla
-user_pref("browser.preferences.moreFromMozilla", false);
-
-// disable check for default browser
-user_pref("browser.shell.checkDefaultBrowser", false);
-
-// disable translations
-user_pref("browser.translations.automaticallyPopup", false);
-user_pref("browser.translations.enable", false);
-user_pref("browser.translations.select.enable", false);
+// disable promo
+user_pref("browser.contentblocking.report.hide_vpn_banner", true);
+user_pref("browser.contentblocking.report.show_mobile_app", false);
+user_pref("browser.contentblocking.report.vpn-promo.url", "");
+user_pref("browser.contentblocking.report.vpn.enabled", false);
+user_pref("browser.vpn_promo.enabled", false);
+user_pref("browser.promo.focus.enabled", false);
+user_pref("identity.mobilepromo.android", "");
+user_pref("identity.mobilepromo.ios", "");
+user_pref("identity.sendtabpromo.url", "");
+user_pref("browser.promo.focus.enabled", false);
+user_pref("browser.promo.pin.enabled", false);
 
 // disable lockwise
 user_pref("browser.contentblocking.report.lockwise.enabled", false);
@@ -318,20 +316,175 @@ user_pref("signon.usernameOnlyForm.enabled", false);
 // disable recommendations
 // extensions.htmlaboutaddons.recommendations.enabled and extensions.getAddons.showPane probably need to be put in manually
 user_pref("browser.discovery.enabled", false);
+user_pref("browser.contentblocking.cfr-milestone.enabled", false);
+user_pref("browser.contentblocking.cfr-milestone.milestones", "");
+user_pref("browser.newtabpage.activity-stream.asrouter.providers.cfr", "");
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
 user_pref("extensions.getAddons.showPane", false)
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("extensions.recommendations.themeRecommendationUrl", "");
 
-// pocket (probably going to be removed soon?)
-user_pref("extensions.pocket.api", "");
-user_pref("extensions.pocket.bffApi", "");
-user_pref("extensions.pocket.bffRecentSaves", false);
-user_pref("extensions.pocket.oAuthConsumerKey", "");
-user_pref("extensions.pocket.oAuthConsumerKeyBff", "");
-user_pref("extensions.pocket.showHome", false);
-user_pref("extensions.pocket.site", "");
+// ai
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.menu", false);
+user_pref("browser.ml.chat.page.footerBadge", false);
+user_pref("browser.ml.chat.page.menuBadge", false);
+user_pref("browser.ml.chat.prompt.prefix", "");
+user_pref("browser.ml.chat.prompts.0", "");
+user_pref("browser.ml.chat.prompts.1", "");
+user_pref("browser.ml.chat.prompts.3", "");
+user_pref("browser.ml.chat.prompts.4", "");
+user_pref("browser.ml.chat.shortcuts", false);
+user_pref("browser.ml.chat.shortcuts.custom", false);
+user_pref("browser.ml.chat.sidebar", false);
+user_pref("browser.ml.checkForMemory", false);
+user_pref("browser.ml.linkPreview.blockListEnabled", false);
+user_pref("browser.ml.linkPreview.ignoreMs", 0);
+user_pref("browser.ml.linkPreview.longPress", false);
+user_pref("browser.ml.linkPreview.longPressMs", 0);
+user_pref("browser.ml.linkPreview.outputSentences", 0);
+user_pref("browser.ml.linkPreview.recentTypingMs", 0);
+user_pref("browser.ml.minimumPhysicalMemory", 0);
+user_pref("browser.ml.modelCacheMaxSize", 0);
+user_pref("browser.ml.modelCacheTimeout", 0);
+user_pref("browser.ml.modelHubRootUrl", "");
+user_pref("browser.ml.modelHubUrlTemplate", "");
+user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("browser.tabs.groups.smart.searchTopicEnabled", false);
+user_pref("browser.tabs.groups.smart.userEnabled", false);
+user_pref("extensions.ml.enabled", false);
+
+// newtabpage/homepage
+user_pref("browser.newtabpage.activity-stream.asrouter.providers.message-groups", "");
+user_pref("browser.newtabpage.activity-stream.asrouter.providers.messaging-experiments", "");
+user_pref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "");
+user_pref("browser.newtabpage.activity-stream.asrouter.useRemoteL10n", false);
+user_pref("browser.newtabpage.activity-stream.caretBlinkCount", 0);
+user_pref("browser.newtabpage.activity-stream.caretBlinkTime", 0);
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.contextualContent.fakespot.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.contextualContent.feeds", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.contextualContent.locale-content-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.contextualContent.selectedFeed", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.contile-topsites-positions", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.endpointSpocsClear", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.endpoints", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.hideDescriptions.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.locale-weather-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.merino-provider.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.merino-provider.endpoint", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.ohttp.configURL", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.personalization.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.placements.contextualSpocs", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.placements.contextualSpocs.counts", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.placements.spocs", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.placements.spocs.counts", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.placements.tiles", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.placements.tiles.counts", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.readTime.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.region-bff-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.region-spocs-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.region-stories-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.region-weather-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.sections.cards.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.sections.cards.thumbsUpDown.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.sections.contextualAds.locale-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.sections.locale-content-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.locale-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.user.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.spoc-positions", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.spoc-topsites-positions", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.spocTopsitesPlacement.enabled", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.spocs.personalized", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.thumbsUpDown.locale-thumbs-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.thumbsUpDown.region-thumbs-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.thumbsUpDown.searchTopsitesCompact", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.titleLines", 0);
+user_pref("browser.newtabpage.activity-stream.discoverystream.topicLabels.locale-topic-label-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.topicLabels.region-topic-label-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.topicSelection.locale-topics-config", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
+user_pref("browser.newtabpage.activity-stream.discoverystream.topicSelection.suggestedTopics", "");
+user_pref("browser.newtabpage.activity-stream.discoverystream.topicSelection.topics", "");
+user_pref("browser.newtabpage.activity-stream.feeds.aboutpreferences", false);
+user_pref("browser.newtabpage.activity-stream.feeds.adsfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.favicon", false);
+user_pref("browser.newtabpage.activity-stream.feeds.inferredpersonalizationfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.listsfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.newtabinit", false);
+user_pref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
+user_pref("browser.newtabpage.activity-stream.feeds.places", false);
+user_pref("browser.newtabpage.activity-stream.feeds.prefs", false);
+user_pref("browser.newtabpage.activity-stream.feeds.recommendationprovider", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories.options", "");
+user_pref("browser.newtabpage.activity-stream.feeds.sections", false);
+user_pref("browser.newtabpage.activity-stream.feeds.smartshortcutsfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.startupcacheinit", false);
+user_pref("browser.newtabpage.activity-stream.feeds.system.topsites", false);
+user_pref("browser.newtabpage.activity-stream.feeds.system.topstories", true);
+user_pref("browser.newtabpage.activity-stream.feeds.systemtick", false);
+user_pref("browser.newtabpage.activity-stream.feeds.timerfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.feeds.trendingsearchfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", false);
+user_pref("browser.newtabpage.activity-stream.feeds.weatherfeed", false);
+user_pref("browser.newtabpage.activity-stream.hideTopSitesWithSearchParam", "");
+user_pref("browser.newtabpage.activity-stream.images.smart", false);
+user_pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
+user_pref("browser.newtabpage.activity-stream.improvesearch.noDefaultSearchTile", false);
+user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
+user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "");
+user_pref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
+user_pref("browser.newtabpage.activity-stream.newNewtabExperience.colors", "");
+user_pref("browser.newtabpage.activity-stream.newtabAdSize.billboard.position", "0");
+user_pref("browser.newtabpage.activity-stream.newtabAdSize.leaderboard.position", "0");
+user_pref("browser.newtabpage.activity-stream.newtabWallpapers.customColor.enabled", false);
+user_pref("browser.newtabpage.activity-stream.newtabWallpapers.customWallpaper.enabled", false);
+user_pref("browser.newtabpage.activity-stream.newtabWallpapers.enabled", false);
+user_pref("browser.newtabpage.activity-stream.pocketCta", "");
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.rows", 0);
+user_pref("browser.newtabpage.activity-stream.section.topstories.rows", 0);
+user_pref("browser.newtabpage.activity-stream.sectionOrder", "");
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
+user_pref("browser.newtabpage.activity-stream.support.url", "");
+user_pref("browser.newtabpage.activity-stream.system.showSponsoredCheckboxes", false);
+user_pref("browser.newtabpage.activity-stream.topSitesRows", 0);
+user_pref("browser.newtabpage.activity-stream.trendingSearch.defaultSearchEngine", "");
+user_pref("browser.newtabpage.activity-stream.trendingSearch.enabled", false);
+user_pref("browser.newtabpage.activity-stream.unifiedAds.endpoint", "");
+user_pref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
+user_pref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
+user_pref("browser.newtabpage.activity-stream.weather.display", "");
+user_pref("browser.newtabpage.activity-stream.weather.locationSearchEnabled", false);
+user_pref("browser.newtabpage.activity-stream.weather.temperatureUnits", "");
+user_pref("browser.newtabpage.activity-stream.widgets.focusTimer.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.lists.enabled", false);
+user_pref("browser.newtabpage.activity-stream.widgets.lists.maxListItems", 0);
+user_pref("browser.newtabpage.activity-stream.widgets.lists.maxLists", 0);
+
+// disable relay
+user_pref("browser.newtabpage.activity-stream.discoverystream.ohttp.relayURL", "");
+user_pref("signon.firefoxRelay.base_url", "");
+user_pref("signon.firefoxRelay.feature", "");
+user_pref("signon.firefoxRelay.firstOfferVersionFallback", "");
+user_pref("signon.firefoxRelay.learn_more_url", "");
+user_pref("signon.firefoxRelay.manage_url", "");
+user_pref("signon.firefoxRelay.privacy_policy_url", "");
+user_pref("signon.firefoxRelay.terms_of_service_url", "");
+user_pref("toolkit.shopping.ohttpRelayURL", "");
 
 // disable mozilla accounts
 user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
@@ -354,6 +507,27 @@ user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.monitorEnabled", false)
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.relayEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.vpnEnabled", false);
 
+// pocket (probably going to be removed soon?)
+user_pref("extensions.pocket.api", "");
+user_pref("extensions.pocket.bffApi", "");
+user_pref("extensions.pocket.bffRecentSaves", false);
+user_pref("extensions.pocket.oAuthConsumerKey", "");
+user_pref("extensions.pocket.oAuthConsumerKeyBff", "");
+user_pref("extensions.pocket.showHome", false);
+user_pref("extensions.pocket.site", "");
+
+// disable firefox labs
+user_pref("browser.preferences.experimental.hidden", true);
+user_pref("browser.preferences.experimental", false);
+
+// disable more from mozilla
+user_pref("browser.preferences.moreFromMozilla", false);
+
+// disable translations
+user_pref("browser.translations.automaticallyPopup", false);
+user_pref("browser.translations.enable", false);
+user_pref("browser.translations.select.enable", false);
+
 // disable picture in picture
 user_pref("media.videocontrols.picture-in-picture.enabled", false);
 user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
@@ -363,17 +537,6 @@ user_pref("middlemouse.paste", false);
 
 // disable reader
 user_pref("reader.parse-on-load.enabled", false);
-
-// disable relay
-user_pref("browser.newtabpage.activity-stream.discoverystream.ohttp.relayURL", "");
-user_pref("signon.firefoxRelay.base_url", "");
-user_pref("signon.firefoxRelay.feature", "");
-user_pref("signon.firefoxRelay.firstOfferVersionFallback", "");
-user_pref("signon.firefoxRelay.learn_more_url", "");
-user_pref("signon.firefoxRelay.manage_url", "");
-user_pref("signon.firefoxRelay.privacy_policy_url", "");
-user_pref("signon.firefoxRelay.terms_of_service_url", "");
-user_pref("toolkit.shopping.ohttpRelayURL", "");
 
 //////////////////////////////
 //////////////////////////////
@@ -387,69 +550,6 @@ user_pref("browser.compactmode.show", true);
 // fades out unloaded tabs
 user_pref("browser.tabs.fadeOutUnloadedTabs", true);
 
-// newtabpage/homepage
-user_pref("browser.newtabpage.activity-stream.discoverystream.contextualContent.fakespot.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.merino-provider.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.personalization.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.promoCard.visible", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.readTime.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.sections.cards.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.sections.cards.thumbsUpDown.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.sections.personalization.inferred.user.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.spocTopsitesPlacement.enabled", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.spocs.personalized", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.thumbsUpDown.searchTopsitesCompact", false);
-user_pref("browser.newtabpage.activity-stream.discoverystream.topicSelection.onboarding.maybeDisplay", false);
-user_pref("browser.newtabpage.activity-stream.feeds.aboutpreferences", false);
-user_pref("browser.newtabpage.activity-stream.feeds.adsfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.favicon", false);
-user_pref("browser.newtabpage.activity-stream.feeds.inferredpersonalizationfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.listsfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.newtabinit", false);
-user_pref("browser.newtabpage.activity-stream.feeds.newtabmessaging", false);
-user_pref("browser.newtabpage.activity-stream.feeds.places", false);
-user_pref("browser.newtabpage.activity-stream.feeds.prefs", false);
-user_pref("browser.newtabpage.activity-stream.feeds.recommendationprovider", false);
-user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-user_pref("browser.newtabpage.activity-stream.feeds.sections", false);
-user_pref("browser.newtabpage.activity-stream.feeds.smartshortcutsfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.startupcacheinit", false);
-user_pref("browser.newtabpage.activity-stream.feeds.system.topsites", false);
-user_pref("browser.newtabpage.activity-stream.feeds.system.topstories", true);
-user_pref("browser.newtabpage.activity-stream.feeds.systemtick", false);
-user_pref("browser.newtabpage.activity-stream.feeds.timerfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
-user_pref("browser.newtabpage.activity-stream.feeds.trendingsearchfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", false);
-user_pref("browser.newtabpage.activity-stream.feeds.weatherfeed", false);
-user_pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
-user_pref("browser.newtabpage.activity-stream.improvesearch.noDefaultSearchTile", false);
-user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
-user_pref("browser.newtabpage.activity-stream.logowordmark.alwaysVisible", false);
-user_pref("browser.newtabpage.activity-stream.newtabWallpapers.customColor.enabled", false);
-user_pref("browser.newtabpage.activity-stream.newtabWallpapers.customWallpaper.enabled", false);
-user_pref("browser.newtabpage.activity-stream.newtabWallpapers.enabled", false);
-user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
-user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
-user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
-user_pref("browser.newtabpage.activity-stream.showSearch", false);
-user_pref("browser.newtabpage.activity-stream.showSponsored", false);
-user_pref("browser.newtabpage.activity-stream.showSponsoredCheckboxes", false);
-user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
-user_pref("browser.newtabpage.activity-stream.showWeather", false);
-user_pref("browser.newtabpage.activity-stream.system.showSponsoredCheckboxes", false);
-user_pref("browser.newtabpage.activity-stream.trendingSearch.enabled", false);
-user_pref("browser.newtabpage.activity-stream.unifiedAds.endpoint", "");
-user_pref("browser.newtabpage.activity-stream.unifiedAds.spocs.enabled", false);
-user_pref("browser.newtabpage.activity-stream.unifiedAds.tiles.enabled", false);
-user_pref("browser.newtabpage.activity-stream.weather.locationSearchEnabled", false);
-user_pref("browser.newtabpage.activity-stream.widgets.focusTimer.enabled", false);
-user_pref("browser.newtabpage.activity-stream.widgets.lists.enabled", false);
-user_pref("browser.newtabpage.enabled", false);
-user_pref("browser.newtabpage.sponsor-protection.enabled", false);
-
 // set home and new tab page to about:blank
 user_pref("browser.startup.homepage", "about:blank");
 user_pref("startup.homepage_welcome_url", "about:blank");
@@ -461,6 +561,8 @@ user_pref("browser.startup.page", 3);
 user_pref("browser.toolbars.bookmarks.visibility", "newtab");
 
 // disable suggestions
+user_pref("browser.urlbar.merino.endpointURL", "");
+user_pref("browser.urlbar.merino.timeoutMs", 0);
 user_pref("browser.urlbar.shortcuts.actions", false);
 user_pref("browser.urlbar.shortcuts.bookmarks", false);
 user_pref("browser.urlbar.shortcuts.history", false);
@@ -519,50 +621,6 @@ user_pref("full-screen-api.transition.timeout", 0);
 user_pref("full-screen-api.warning.delay", 0);
 user_pref("full-screen-api.warning.timeout", 0);
 
-// disable promo in about:* pages
-user_pref("browser.contentblocking.report.hide_vpn_banner", true);
-user_pref("browser.contentblocking.report.show_mobile_app", false);
-user_pref("browser.contentblocking.report.vpn.enabled", false);
-user_pref("browser.vpn_promo.enabled", false);
-user_pref("browser.promo.focus.enabled", false);
-
-/////////////////
-/////////////////
-//// useless ////
-/////////////////
-/////////////////
-
-// ai
-user_pref("browser.ml.chat.enabled", false);
-user_pref("browser.ml.chat.menu", false);
-user_pref("browser.ml.chat.page.footerBadge", false);
-user_pref("browser.ml.chat.page.menuBadge", false);
-user_pref("browser.ml.chat.prompt.prefix", "");
-user_pref("browser.ml.chat.prompts.0", "");
-user_pref("browser.ml.chat.prompts.1", "");
-user_pref("browser.ml.chat.prompts.3", "");
-user_pref("browser.ml.chat.prompts.4", "");
-user_pref("browser.ml.chat.shortcuts", false);
-user_pref("browser.ml.chat.shortcuts.custom", false);
-user_pref("browser.ml.chat.sidebar", false);
-user_pref("browser.ml.checkForMemory", false);
-user_pref("browser.ml.linkPreview.blockListEnabled", false);
-user_pref("browser.ml.linkPreview.ignoreMs", 0);
-user_pref("browser.ml.linkPreview.longPress", false);
-user_pref("browser.ml.linkPreview.longPressMs", 0);
-user_pref("browser.ml.linkPreview.outputSentences", 0);
-user_pref("browser.ml.linkPreview.recentTypingMs", 0);
-user_pref("browser.ml.minimumPhysicalMemory", 0);
-user_pref("browser.ml.modelCacheMaxSize", 0);
-user_pref("browser.ml.modelCacheTimeout", 0);
-user_pref("browser.ml.modelHubRootUrl", "");
-user_pref("browser.ml.modelHubUrlTemplate", "");
-user_pref("browser.newtabpage.activity-stream.images.smart", false);
-user_pref("browser.tabs.groups.smart.enabled", false);
-user_pref("browser.tabs.groups.smart.searchTopicEnabled", false);
-user_pref("browser.tabs.groups.smart.userEnabled", false);
-user_pref("extensions.ml.enabled", false);
-
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //// features that are on other browsers that is not enabled by default ////
@@ -577,9 +635,3 @@ user_pref("dom.viewTransitions.enabled", true);
 
 // enable webshare
 user_pref("dom.webshare.enabled", true);
-
-///////////////////////////////////
-///////////////////////////////////
-//// testing/not in a category ////
-///////////////////////////////////
-///////////////////////////////////
