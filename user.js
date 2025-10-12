@@ -56,6 +56,14 @@ user_pref("browser.crashReporter.memtest", false);
 user_pref("browser.crashReports.unsubmittedCheck.chancesUntilSuppress", 0);
 user_pref("browser.tabs.crashReporting.sendReport", false);
 
+// dont tell firefox if any of these have been used
+user_pref("browser.engagement.ctrlTab.has-used", false);
+user_pref("browser.engagement.downloads-button.has-used", false);
+user_pref("browser.engagement.fxa-toolbar-menu-button.has-used", false);
+user_pref("browser.engagement.home-button.has-used", false);
+user_pref("browser.engagement.library-button.has-used", false);
+user_pref("browser.engagement.sidebar-button.has-used", false);
+
 // enable force media memory cache
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
 
@@ -617,10 +625,13 @@ user_pref("media.autoplay.default", 0);
 // enable drm content
 user_pref("media.eme.enabled", true);
 
-// hide sidebar
-user_pref("sidebar.position_start", false);
+// disable new sidebar
 user_pref("sidebar.animation.enabled", false);
-user_pref("sidebar.nimbus", "");
+user_pref("sidebar.backupState", "");
+user_pref("sidebar.expandOnHover", false);
+user_pref("sidebar.main.tools", "");
+user_pref("sidebar.revamp", false);
+user_pref("sidebar.visibility", "hide-sidebar");
 
 // disable key for menu bar
 user_pref("ui.key.menuAccessKeyFocuses", false);
