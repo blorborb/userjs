@@ -8,27 +8,11 @@ user_pref("borb.user.js", "F143");
 //////////////////////////
 
 // assorted telemetry
-user_pref("app.normandy.api_url", "");
-user_pref("app.normandy.enabled", false);
-user_pref("app.normandy.first_run", false);
-user_pref("app.normandy.logging.level", 0);
-user_pref("app.normandy.shieldLearnMoreUrl", "");
-user_pref("app.shield.optoutstudies.enabled", false);
-user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
-user_pref("browser.newtabpage.activity-stream.telemetry", false);
-user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
 user_pref("datareporting.healthreport.infoURL", "");
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.usage.uploadEnabled", false);
 user_pref("extensions.dataCollectionPermissions.enabled", false);
-user_pref("nimbus.migrations.after-remote-settings-update", 0);
-user_pref("nimbus.migrations.after-store-initialized", 0);
-user_pref("nimbus.migrations.init-started", 0);
-user_pref("nimbus.profilesdatastoreservice.enabled", false);
-user_pref("nimbus.telemetry.targetingContextEnabled", false);
-user_pref("nimbus.validation.enabled", false);
 user_pref("telemetry.fog.init_on_shutdown", false);
 user_pref("toolkit.datacollection.infoURL", "");
 user_pref("toolkit.telemetry.archive.enabled", false);
@@ -177,7 +161,7 @@ user_pref("network.trr.uri", "https://dns11.quad9.net/dns-query");
 // enable global privacy control
 user_pref("privacy.globalprivacycontrol.enabled", true);
 
-// disable webgl (enable if you need)
+// disable webgl (remove if you need webgl)
 user_pref("webgl.disabled", true);
 
 /////////////////////
@@ -273,6 +257,15 @@ user_pref("accessibility.typeaheadfind.prefillwithselection", false);
 user_pref("browser.urlbar.accessibility.tabToSearch.announceResults", false);
 user_pref("devtools.accessibility.enabled", false);
 
+// mozilla experiments
+user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("nimbus.migrations.after-remote-settings-update", 0);
+user_pref("nimbus.migrations.after-store-initialized", 0);
+user_pref("nimbus.migrations.init-started", 0);
+user_pref("nimbus.profilesdatastoreservice.enabled", false);
+user_pref("nimbus.telemetry.targetingContextEnabled", false);
+user_pref("nimbus.validation.enabled", false);
+
 // do not show about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
 
@@ -336,6 +329,7 @@ user_pref("extensions.recommendations.themeRecommendationUrl", "");
 // ai
 user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.ml.chat.menu", false);
+user_pref("browser.ml.chat.page", false);
 user_pref("browser.ml.chat.page.footerBadge", false);
 user_pref("browser.ml.chat.page.menuBadge", false);
 user_pref("browser.ml.chat.prompt.prefix", "");
@@ -347,6 +341,7 @@ user_pref("browser.ml.chat.shortcuts", false);
 user_pref("browser.ml.chat.shortcuts.custom", false);
 user_pref("browser.ml.chat.sidebar", false);
 user_pref("browser.ml.checkForMemory", false);
+user_pref("browser.ml.enable", false);
 user_pref("browser.ml.linkPreview.blockListEnabled", false);
 user_pref("browser.ml.linkPreview.ignoreMs", 0);
 user_pref("browser.ml.linkPreview.longPress", false);
@@ -437,11 +432,13 @@ user_pref("browser.newtabpage.activity-stream.feeds.startupcacheinit", false);
 user_pref("browser.newtabpage.activity-stream.feeds.system.topsites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.system.topstories", true);
 user_pref("browser.newtabpage.activity-stream.feeds.systemtick", false);
+user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.feeds.timerfeed", false);
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.trendingsearchfeed", false);
 user_pref("browser.newtabpage.activity-stream.feeds.wallpaperfeed", false);
 user_pref("browser.newtabpage.activity-stream.feeds.weatherfeed", false);
+user_pref("browser.newtabpage.activity-stream.fxaccounts.endpoint", "");
 user_pref("browser.newtabpage.activity-stream.hideTopSitesWithSearchParam", "");
 user_pref("browser.newtabpage.activity-stream.images.smart", false);
 user_pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
@@ -469,6 +466,8 @@ user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.activity-stream.showWeather", false);
 user_pref("browser.newtabpage.activity-stream.support.url", "");
 user_pref("browser.newtabpage.activity-stream.system.showSponsoredCheckboxes", false);
+user_pref("browser.newtabpage.activity-stream.telemetry", false);
+user_pref("browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint", "");
 user_pref("browser.newtabpage.activity-stream.topSitesRows", 0);
 user_pref("browser.newtabpage.activity-stream.trendingSearch.defaultSearchEngine", "");
 user_pref("browser.newtabpage.activity-stream.trendingSearch.enabled", false);
@@ -515,15 +514,6 @@ user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.monitorEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.relayEnabled", false);
 user_pref("identity.fxaccounts.toolbar.pxiToolbarEnabled.vpnEnabled", false);
-
-// pocket (probably going to be removed soon?)
-user_pref("extensions.pocket.api", "");
-user_pref("extensions.pocket.bffApi", "");
-user_pref("extensions.pocket.bffRecentSaves", false);
-user_pref("extensions.pocket.oAuthConsumerKey", "");
-user_pref("extensions.pocket.oAuthConsumerKeyBff", "");
-user_pref("extensions.pocket.showHome", false);
-user_pref("extensions.pocket.site", "");
 
 // disable firefox labs
 user_pref("browser.preferences.experimental.hidden", true);
@@ -630,12 +620,13 @@ user_pref("media.autoplay.default", 0);
 // enable drm content
 user_pref("media.eme.enabled", true);
 
-// disable new sidebar
+// disable sidebar
+user_pref("sidebar.animation.duration-ms", 0);
 user_pref("sidebar.animation.enabled", false);
 user_pref("sidebar.backupState", "");
 user_pref("sidebar.expandOnHover", false);
-user_pref("sidebar.main.tools", "");
-user_pref("sidebar.revamp", false);
+user_pref("sidebar.main.tools", " ");
+user_pref("sidebar.notification.badge.aichat", false);
 user_pref("sidebar.visibility", "hide-sidebar");
 
 // disable key for menu bar
@@ -670,3 +661,25 @@ user_pref("dom.viewTransitions.enabled", true);
 
 // enable webshare
 user_pref("dom.webshare.enabled", true);
+
+////////////////////
+////////////////////
+//// deprecated ////
+////////////////////
+////////////////////
+
+// normandy
+user_pref("app.normandy.api_url", "");
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.first_run", false);
+user_pref("app.normandy.logging.level", 0);
+user_pref("app.normandy.shieldLearnMoreUrl", "");
+
+// pocket (probably going to be removed soon?)
+user_pref("extensions.pocket.api", "");
+user_pref("extensions.pocket.bffApi", "");
+user_pref("extensions.pocket.bffRecentSaves", false);
+user_pref("extensions.pocket.oAuthConsumerKey", "");
+user_pref("extensions.pocket.oAuthConsumerKeyBff", "");
+user_pref("extensions.pocket.showHome", false);
+user_pref("extensions.pocket.site", "");
